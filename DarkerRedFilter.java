@@ -1,4 +1,4 @@
-public class LaplacianFilter implements Filter {
+public class DarkerRedFilter implements Filter {
     public void filter(PixelImage pi) {
         Pixel[][] data = pi.getData();
         Pixel[][] ret = data;
