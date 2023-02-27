@@ -66,7 +66,7 @@ public class BloodFilter implements Filter {
                 ret[i][j].setGreen(avgG);
             }
 
-            pi.setData(ret);
         }
+        pi.setData(ret);
     }
 }

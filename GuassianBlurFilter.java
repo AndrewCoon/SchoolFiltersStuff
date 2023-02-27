@@ -48,7 +48,7 @@ public class GuassianBlurFilter implements Filter {
                 ret[i][j].setGreen(avgG);
             }
 
-            pi.setData(ret);
         }
+        pi.setData(ret);
     }
 }

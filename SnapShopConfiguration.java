@@ -21,6 +21,9 @@ public class SnapShopConfiguration
         theShop.addFilter(new LaplacianFilter(), "Laplacian Image"); 
         theShop.addFilter(new BloodFilter(), "Blood Red Image");  
         theShop.addFilter(new DarkerRedFilter(), "Demonic Night Image");  
+        theShop.addFilter(new MegaContrastFilter(), "Mega Contrast Image");  
+        theShop.addFilter(new NoClueFilter(), "IDK Image");  
+        theShop.addFilter(new UnSharpFilter(), "Less Sharp Image");  
         //theShop.addFilter(new LightenBy10Filter(), "Lighten by 10 Image" );
         //theShop.addFilter(new IntensifyFilter(), "Intensify Image" );
         //theShop.addFilter(new EmbossFilter(), "Emboss Filter" );

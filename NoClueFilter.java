@@ -1,4 +1,4 @@
-public class DarkerRedFilter implements Filter {
+public class NoClueFilter implements Filter {
     public void filter(PixelImage pi) {
         Pixel[][] data = pi.getData();
         Pixel[][] ret = data;
@@ -19,7 +19,7 @@ public class DarkerRedFilter implements Filter {
                 avgR += data[i - 1][j + 1].getRed() * -1;
                 avgR += data[i + 1][j + 1].getRed() * -1;
 
-                avgB += data[i][j].getBlue() * 4;
+                avgB += data[i][j].getBlue() * 8;
                 avgB += data[i - 1][j].getBlue() * -1;
                 avgB += data[i + 1][j].getBlue() * -1;
                 avgB += data[i][j - 1].getBlue() * -1;
@@ -29,7 +29,7 @@ public class DarkerRedFilter implements Filter {
                 avgB += data[i - 1][j + 1].getBlue() * -1;
                 avgB += data[i + 1][j + 1].getBlue() * -1;
 
-                avgG += data[i][j].getGreen() * 4;
+                avgG += data[i][j].getGreen() * 8;
                 avgG += data[i - 1][j].getGreen() * -1;
                 avgG += data[i + 1][j].getGreen() * -1;
                 avgG += data[i][j - 1].getGreen() * -1;
@@ -39,10 +39,10 @@ public class DarkerRedFilter implements Filter {
                 avgG += data[i - 1][j + 1].getGreen() * -1;
                 avgG += data[i + 1][j + 1].getGreen() * -1;
 
-                avgR /= 9;
-                avgG /= 9;
-                avgB /= 9;
-                
+                // avgR /= 9;
+                // avgG /= 9;
+                // avgB /= 9;
+
                 if(avgR<0) {
                     avgR=0;
                 }

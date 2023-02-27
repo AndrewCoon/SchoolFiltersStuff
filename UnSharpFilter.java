@@ -1,4 +1,4 @@
-public class LaplacianFilter implements Filter {
+public class UnSharpFilter implements Filter {
     public void filter(PixelImage pi) {
         Pixel[][] data = pi.getData();
         Pixel[][] ret = pi.getData();
@@ -9,39 +9,39 @@ public class LaplacianFilter implements Filter {
                 int avgG = 0;
                 int avgB = 0;
 
-                avgR += data[i][j].getRed() * 8;
-                avgR += data[i - 1][j].getRed() * -1;
-                avgR += data[i + 1][j].getRed() * -1;
-                avgR += data[i][j - 1].getRed() * -1;
-                avgR += data[i][j + 1].getRed() * -1;
+                avgR += data[i][j].getRed() * 28;
+                avgR += data[i - 1][j].getRed() * -2;
+                avgR += data[i + 1][j].getRed() * -2;
+                avgR += data[i][j - 1].getRed() * -2;
+                avgR += data[i][j + 1].getRed() * -2;
                 avgR += data[i - 1][j - 1].getRed() * -1;
                 avgR += data[i + 1][j - 1].getRed() * -1;
                 avgR += data[i - 1][j + 1].getRed() * -1;
                 avgR += data[i + 1][j + 1].getRed() * -1;
 
-                avgB += data[i][j].getBlue() * 8;
-                avgB += data[i - 1][j].getBlue() * -1;
-                avgB += data[i + 1][j].getBlue() * -1;
-                avgB += data[i][j - 1].getBlue() * -1;
-                avgB += data[i][j + 1].getBlue() * -1;
+                avgB += data[i][j].getBlue() * 28;
+                avgB += data[i - 1][j].getBlue() * -2;
+                avgB += data[i + 1][j].getBlue() * -2;
+                avgB += data[i][j - 1].getBlue() * -2;
+                avgB += data[i][j + 1].getBlue() * -2;
                 avgB += data[i - 1][j - 1].getBlue() * -1;
                 avgB += data[i + 1][j - 1].getBlue() * -1;
                 avgB += data[i - 1][j + 1].getBlue() * -1;
                 avgB += data[i + 1][j + 1].getBlue() * -1;
 
-                avgG += data[i][j].getGreen() * 8;
-                avgG += data[i - 1][j].getGreen() * -1;
-                avgG += data[i + 1][j].getGreen() * -1;
-                avgG += data[i][j - 1].getGreen() * -1;
-                avgG += data[i][j + 1].getGreen() * -1;
+                avgG += data[i][j].getGreen() * 28;
+                avgG += data[i - 1][j].getGreen() * -2;
+                avgG += data[i + 1][j].getGreen() * -2;
+                avgG += data[i][j - 1].getGreen() * -2;
+                avgG += data[i][j + 1].getGreen() * -2;
                 avgG += data[i - 1][j - 1].getGreen() * -1;
                 avgG += data[i + 1][j - 1].getGreen() * -1;
                 avgG += data[i - 1][j + 1].getGreen() * -1;
                 avgG += data[i + 1][j + 1].getGreen() * -1;
 
-                // avgR /= 9;
-                // avgG /= 9;
-                // avgB /= 9;
+                avgR /= 16;
+                avgG /= 16;
+                avgB /= 16;
 
                 if (avgR < 0) {
                     avgR = 0;
@@ -67,7 +67,6 @@ public class LaplacianFilter implements Filter {
                 ret[i][j].setGreen(avgG);
             }
 
-          
         }
         pi.setData(ret);
     }
