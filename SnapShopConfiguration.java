@@ -24,8 +24,9 @@ public class SnapShopConfiguration
         theShop.addFilter(new MegaContrastFilter(), "Mega Contrast Image");  
         theShop.addFilter(new NoClueFilter(), "IDK Image");  
         theShop.addFilter(new UnSharpFilter(), "Less Sharp Image");  
+        theShop.addFilter(new EdgyFilter(), "Edgy Image");  
         //theShop.addFilter(new LightenBy10Filter(), "Lighten by 10 Image" );
         //theShop.addFilter(new IntensifyFilter(), "Intensify Image" );
-        //theShop.addFilter(new EmbossFilter(), "Emboss Filter" );
+        theShop.addFilter(new EmbossFilter(), "Emboss Filter" );
     }
 }
